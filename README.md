@@ -8,11 +8,7 @@
 
 ---
 
-<<<<<<< HEAD
-这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，目标是大幅削减无效 Token 与废话，同时尽量保留完整准确的技术见解与代码逻辑。现已加入特色“中文文言模式”。
-=======
 这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，不仅削减了高达 75% 的无效 Token 与废话，同时还能保留完整准确的技术见解与代码逻辑。**核心理念：旨在简化不必要的输出，而绝不减少传达的语义点，确保读者获取的信息量百分百无损。**
->>>>>>> codex
 
 ## 为什么需要 Shao-bb？
 
