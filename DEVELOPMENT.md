@@ -94,19 +94,27 @@
 
 ```text
 f:\skills\shao-bb\
+├── .codex/
+│   ├── config.toml
+│   └── hooks.json
+├── skills/
+│   └── shao-bb/
+│       └── SKILL.md
 ├── skill.md
 ├── README.md
 ├── DEVELOPMENT.md
 └── examples/
-    ├── before-after.md
-    └── wenyan-demo.md
+    └── before-after.md
 ```
 
-当前仓库仍是“文档型原型”：
-- 已有核心 Skill 定义。
-- 已有三档模式说明。
-- 已有对比示例与文言示例。
-- 尚无脚本、测试、自动分发、CLI 或 IDE 集成实现。
+当前仓库仍是“文档型原型”，但已有接入支持：
+- 已有 Codex 核心 Skill 入口 `skills/shao-bb/SKILL.md`。
+- 根目录 `skill.md` 暂作旧入口与长版说明保留。
+- 已有两档模式说明 (lite / ultra)。
+- 已有对比示例。
+- 包含了对 Codex 等环境初阶的自动分发和提示词注入装载支持（Hooks）。
+- 首发平台边界：优先按 Codex Skill 目录规范推进。其他平台兼容列入后续待办。
+- 尚无脚本、测试、CLI 或更广泛的 IDE 集成实现。
 
 ---
 
@@ -114,32 +122,35 @@ f:\skills\shao-bb\
 
 ### DONE
 - `[x]` 定义项目定位：面向中文大模型/Agent 的省流 Skill。
-- `[x]` 完成核心技能文档 `skill.md`，包含 `lite / ultra / wenyan` 三档模式。
+- `[x]` 完成 Codex 核心技能入口 `skills/shao-bb/SKILL.md` 及核心文档 `skill.md`，包含 `lite / ultra` 模式，并确立**不缩水技术语义点**的核心规则。
+- `[x]` 保留根目录 `skill.md` 作为旧入口与长版说明。
 - `[x]` 建立基础说明文档 `README.md`。
 - `[x]` 建立示例文档：
   - `[x]` `examples/before-after.md`
-  - `[x]` `examples/wenyan-demo.md`
 - `[x]` 建立开发协作指南 `DEVELOPMENT.md`。
 - `[x]` 为技能设计安全降级规则：高危操作退出极简模式。
+- `[x]` 校准 README 与 Skill 文档边界：未验证效果改为目标或示例，不写成已验证结果。
+- `[x]` 移除华而不实的“文言文”模式，聚焦极致精简与准确性。
+- `[x]` 做自动注入层：已完成对 Codex 的底层挂载支持 (`.codex/hooks.json`)。
 
 ### DOING
+- `[ ]` 继续规划并扩充主流 Agent 平台（如 Cursor, Windsurf, Claude Code）的挂载安装方案。
 - `[ ]` 整理协作规范与路线图结构，使状态面板更适合多人/多 Agent 共同维护。
-- `[ ]` 校准文档边界，避免把“已实现能力”和“规划能力”写混。
+- `[ ]` 明确根目录 `skill.md` 的长期去留：兼容副本、迁移说明或删除。
 
 ### TODO
 
-#### 交互接入
-- `[ ]` 做自动注入层。
-  - 目标：让 `shao-bb` 不只靠手动调用，而是能在支持的平台中自动把核心 system prompt 注入会话。
-  - 范围：优先支持一个平台；模式可切换；可安全停用。
 - `[ ]` 做模式状态管理。
-  - 目标：支持 `lite / ultra / wenyan / 停用` 等模式切换，并让当前状态可感知。
+  - 目标：支持 `lite / ultra / 停用` 等模式切换，并让当前状态可感知。
   - 范围：至少要解决“模式切了但系统不知道”这个问题。
 
 #### 安装与分发
 - `[ ]` 做最小安装与分发方案。
   - 目标：让别人能快速装上并试用，而不是只看文档手动拼。
   - 范围：优先支持一种平台；同时保留对无 hook 平台的规则文件方案。
+- `[ ]` 补充非 Codex 平台兼容路线。
+  - 目标：在 Codex 首发稳定后，再评估 Claude Code、Gemini CLI、Cursor、Windsurf、Cline、Copilot 等平台。
+  - 范围：不提前承诺支持；先记录安装方式、触发方式、是否支持自动激活。
 
 #### 子技能与工具
 - `[ ]` `shao-bb-commit`
@@ -165,7 +176,6 @@ f:\skills\shao-bb\
 - `[!]` 尚无自动化测试或回归检查。
 - `[!]` 尚无真实 benchmark 数据支撑 README 中的效果描述。
 - `[!]` 尚未验证不同 Agent 平台对本 Skill 文件格式的兼容性。
-- `[!]` 文言模式强调信息密度，但在部分技术场景下可能降低新协作者理解速度。
 - `[!]` `caveman` 的仓库结构较完整，但不代表 `shao-bb` 初版必须同步复制 `hooks / benchmarks / evals / commands / tests` 全套形态。
 - `[!]` 当前更适合优先保留关键链路：`核心 prompt -> 自动注入/分发 -> 模式切换 -> 安装说明`。
 
@@ -174,7 +184,7 @@ f:\skills\shao-bb\
 ## 6. 维护规则
 
 每次修改本项目后，至少检查以下四项：
-- `skill.md` 是否仍与 `README.md` 描述一致。
+- `skills/shao-bb/SKILL.md`、`skill.md` 是否仍与 `README.md` 描述一致。
 - 示例文档是否仍能证明当前行为。
 - `DONE / DOING / TODO / KNOWN LIMITATIONS` 是否需要更新。
 - 是否引入了更短但更危险的表达。
