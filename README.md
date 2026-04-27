@@ -8,7 +8,11 @@
 
 ---
 
+<<<<<<< HEAD
 这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，目标是大幅削减无效 Token 与废话，同时尽量保留完整准确的技术见解与代码逻辑。现已加入特色“中文文言模式”。
+=======
+这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，不仅削减了高达 75% 的无效 Token 与废话，同时还能保留完整准确的技术见解与代码逻辑。**核心理念：旨在简化不必要的输出，而绝不减少传达的语义点，确保读者获取的信息量百分百无损。**
+>>>>>>> codex
 
 ## 为什么需要 Shao-bb？
 
@@ -30,8 +34,7 @@
 | 模式 | 指令 | 效果演示 |
 |---|---|---|
 | **Lite (微省流)** | `/shao-bb lite` | “React 重渲染因为内联对象导致了新的引用。用 `useMemo` 包裹住该对象即可。” |
-| **Ultra (电报体)** | `/shao-bb ultra` | “内联对象 -> 新引用 -> 触发重渲染。裹 `useMemo`。” |
-| **Wenyan (文言)** | `/shao-bb wenyan` | “物出新参，致疾速重绘。宜以 `useMemo` 裹之。” |
+| **Ultra (电报体)** | `/shao-bb ultra` | “内联对象 -> 新引用 -> 触发重渲染。使用 `useMemo` 包裹（注：确保语义完整）。” |
 
 ## 安装与使用
 
