@@ -1,18 +1,12 @@
-<p align="center">
-  <strong style="font-size: 2em">🪨 Shao-bb (少BB 中文极简版)</strong>
-</p>
+<h1 align="center">🪨 Shao-bb</h1>
 
 <p align="center">
-  <strong>能用五个字说清的事，绝不用一段话。</strong>
+  <strong>少BB 中文极简版。能用五个字说清的事，绝不用一段话。</strong>
 </p>
 
 ---
 
-<<<<<<< HEAD
-这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，目标是大幅削减无效 Token 与废话，同时尽量保留完整准确的技术见解与代码逻辑。现已加入特色“中文文言模式”。
-=======
-这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，不仅削减了高达 75% 的无效 Token 与废话，同时还能保留完整准确的技术见解与代码逻辑。**核心理念：旨在简化不必要的输出，而绝不减少传达的语义点，确保读者获取的信息量百分百无损。**
->>>>>>> codex
+这是一个专为中文大语言模型及 Agent 设计的省流 (Token-saving) 技能（Skill）。基于海外原版 [Caveman](https://github.com/JuliusBrussee/caveman) 的核心理念二次重构，目标是大幅削减无效 Token 与废话，同时尽量保留完整准确的技术见解与代码逻辑。**核心理念：删掉低价值表达，不删必要信息。**
 
 ## 为什么需要 Shao-bb？
 
@@ -29,7 +23,7 @@
 ---
 **目标：高信息密度 | 少废话 | 技术含义不缩水**
 
-## 三大挡位 (Levels)
+## 两大挡位 (Levels)
 
 | 模式 | 指令 | 效果演示 |
 |---|---|---|
