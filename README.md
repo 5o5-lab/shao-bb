@@ -32,12 +32,18 @@
 
 ## 安装与使用
 
-当前首发目标按 Codex Skill 目录规范推进。其他 Agent 平台兼容方案属于后续待办。
+### Codex / Antigravity 原生支持
+当前首发目标已按原生挂载规范推进。
+- **Codex / Antigravity 环境**：只要把本仓库文件夹拉取或拷贝到你的 `skills` 工作区下，IDE 会自动接管和感知你的 `SKILL.md` 约束。Codex 支持由 hooks 自动启停，Antigravity 支持主动检索阅读。
+- **通用显式激活**：任何时刻在对话里输入 `shao-bb ultra` 或“电报模式”进行唤醒。
 
-- **Codex 入口文件**：`skills/shao-bb/SKILL.md`。
-- **Codex 显式激活**：输入 `shao-bb ultra` 或 `shao-bb lite`。
-- **通用显式激活**：对话时开头加入 `/shao-bb ultra` 或“电报模式”。
-- **恢复原状**：输入“停止省流”或“退出电报体”。
+### Cursor / Windsurf 等通用 IDE 支持
+绝大部分现代 IDE 使用基于工作区根目录文件的静态规则加载。你可以通过我们提供的脚本“一键分发”注入防护栏。
+在你的应用项目根目录下执行：
+\`\`\`bash
+node /path/to/shao-bb/scripts/apply-ide-rules.js
+\`\`\`
+它会自动探究当前目录是否存在 \`.cursorrules\`、\`.windsurfrules\` 或 \`.clinerules\`，并把 Shao-bb 的极致省流但保护核心语义的原则注入进去。即使没有，也会默认为你新建一个通用的 \`.cursorrules\`。一旦注入，该项目后续的所有跨会话回答将自动适用 Shao-bb 极简规范。
 
 ### Codex 首发验收
 
